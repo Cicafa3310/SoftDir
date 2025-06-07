@@ -1,0 +1,323 @@
+/* ====================== */
+/* === Flex-layout ↑ ↑ ↑ === */
+/* ====================== */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+}
+header, footer {
+    flex: 0 0 auto;
+}
+main {
+    flex: 1 1 auto;
+    overflow-y: auto;
+}
+footer p {
+    text-align: center;
+}
+
+/* ====================== */
+/* === Существующий CSS === */
+/* ====================== */
+@font-face {
+    font-family: 'OCRA';
+    src: url('../fonts/OCRA.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'OCRA', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* ====================== */
+/* === Основные цвета === */
+/* ====================== */
+:root {
+    --primary-color: #6200ea;
+    --primary-light: #9d46ff;
+    --primary-dark: #0a00b6;
+    --secondary-color: #03dac6;
+    --background-color: #f5f5f5;
+    --text-color: #212121;
+    --header-footer-bg: linear-gradient(90deg, var(--primary-light), var(--primary-dark));
+    --header-footer-text: #ffffff;
+}
+
+/* ====================== */
+/* === Шапка и подвал === */
+/* ====================== */
+header, footer {
+    background: var(--header-footer-bg);
+    color: var(--header-footer-text);
+    padding: 0.4rem 0.8rem;
+}
+
+/* ====================== */
+/* === Сброс базовых стилей === */
+/* ====================== */
+* {
+    box-sizing: border-box;
+}
+
+/* ====================== */
+/* === Ссылки (по умолчанию) === */
+/* ====================== */
+a {
+    color: var(--header-footer-text) !important;
+    text-decoration: none !important;
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin: 0.25rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    background-color: var(--primary-color);
+    font-weight: 500;
+    transition: background-color 0.2s, color 0.2s;
+}
+a:hover,
+a:focus {
+    background-color: var(--primary-dark) !important;
+    color: var(--header-footer-text) !important;
+}
+
+/* ====================== */
+/* === Исключения для ссылок-кнопок === */
+/* ====================== */
+/* Сбросить */
+a.reset {
+    background-color: transparent !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+a.reset:hover,
+a.reset:focus {
+    background-color: var(--secondary-color) !important;
+    color: #000 !important;
+}
+
+/* Смотреть отзывы */
+a.btn-reviews {
+    background-color: transparent !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+a.btn-reviews:hover,
+a.btn-reviews:focus {
+    background-color: var(--secondary-color) !important;
+    color: #000 !important;
+}
+
+/* Установить */
+a.download {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--header-footer-text) !important;
+}
+a.download:hover,
+a.download:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+    color: var(--header-footer-text) !important;
+}
+
+/* ====================== */
+/* === Стиль для всех button как для ссылок === */
+/* ====================== */
+button {
+    display: inline-block;               /* как у ссылок */
+    padding: 0.6rem 1.2rem;              /* увеличить до размера ссылок */
+    margin: 0.25rem;                     /* отступ как у ссылок */
+    background-color: var(--primary-color);
+    color: var(--header-footer-text);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    font-weight: 500;
+    font-size: 0.9rem;                   /* как у ссылок */
+    text-decoration: none;
+    cursor: pointer;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+button:hover,
+button:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: var(--header-footer-text);
+    outline: none;
+}
+
+/* Если нужно, чтобы кнопка «Добавить» (submit) точно совпадала с .reset */
+button[type="submit"] {
+    padding: 0.6rem 1.2rem;
+}
+
+/* ====================== */
+/* === Формы === */
+/* ====================== */
+input, textarea, select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+/* ====================== */
+/* === Основной контент === */
+/* ====================== */
+main {
+    padding: 1rem;
+    max-width: 900px;
+    margin: 0 auto;
+}
+main ul,
+main form,
+main table {
+    width: 100%;
+}
+
+/* ====================== */
+/* === Форма фильтра === */
+/* ====================== */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+.filter-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+.filter-form input,
+.filter-form select {
+    font-size: 1rem;
+}
+.filter-form button[type="submit"] {
+    padding: 0.6rem 1rem;
+}
+.filter-form .reset {
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--secondary-color);
+}
+
+/* ====================== */
+/* === Список программ === */
+/* ====================== */
+.software-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+.software-list li {
+    background-color: #fff;
+    margin-bottom: 0.75rem;
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+.software-list li .software-name {
+    font-weight: bold;
+    display: inline;
+    margin-right: 0.5rem;
+}
+
+/* ====================== */
+/* === ПРАВКИ И ДОПОЛНЕНИЯ === */
+/* ====================== */
+
+/* 1) Компактнее header и footer */
+header {
+    padding: 0.5rem 1rem; /* вместо 0.4rem 0.8rem */
+}
+header .logo,
+header h1 {
+    font-size: 2rem;  /* чуть больше */
+    margin: 0;
+    line-height: 1.2;
+}
+
+footer {
+    padding: 0.5rem 1rem; /* вместо 0.4rem 0.8rem */
+    text-align: center;
+}
+footer p,
+footer .footer-text {
+    font-size: 0.9rem; /* чуть меньше, чем текст в main */
+    margin: 0;
+    line-height: 1.3;
+}
+
+/* 2) Заголовок страницы «Справочник ПО» */
+.page-title {
+    font-size: 2.25rem; /* увеличили на 0.25rem–0.5rem */
+    margin-bottom: 1rem;
+    font-weight: bold;
+    color: var(--header-footer-text);
+}
+
+/* 3) Убираем жесткое ограничение ширины у main и добавляем отступы */
+main {
+    max-width: none !important; /* снимаем max-width: 900px */
+    width: 100% !important;
+    padding: 0 1rem;            /* боковые отступы, чтобы контент не упирался в край */
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* Если есть обёртка .container или .main-wrapper */
+.container,
+.main-wrapper {
+    max-width: none !important;
+    width: 100% !important;
+    padding: 0 1rem;
+    box-sizing: border-box;
+    margin: 0 auto;
+}
+
+/* При очень больших экранах ограничиваем main до 1600px */
+@media (min-width: 1600px) {
+    main {
+        max-width: 1600px;
+        margin: 0 auto;
+    }
+}
+
+/* 4) Список программ теперь во всю ширину (с отступами) и адаптивный */
+/* Заменяем старые .software-list правила на grid-версию */
+.software-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;          /* расстояние между карточками */
+    padding: 0 1rem;    /* отступы от краёв страницы */
+    width: 100%;
+    box-sizing: border-box;
+    list-style: none;
+    margin: 0 auto;
+}
+
+.software-list li {
+    background-color: #fff;
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    cursor: pointer;
+    margin-bottom: 0;   /* убираем старый margin-bottom, gap возьмет на себя отступ */
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

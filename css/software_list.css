@@ -1,0 +1,162 @@
+/* ============================= */
+/* === Делаем software-list === */
+/* ============================= */
+
+/* 1) Контейнер списка занимает 100% ширины страницы,
+      с «боковыми полями» по 1rem (чтобы не прилегал вплотную к краям). */
+/* 2) Делаем его grid-контейнером: колонки автоматически заполняются,
+      каждую колонку минимум 300px, максимум — занимать доступное пространство. */
+/* 3) Между «ячейками» (ли) — gap 1rem. */
+.software-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1rem;
+    /* padding по бокам, чтобы не было прилегания к самому краю экрана */
+    padding: 0 1rem;
+    /* чтобы ширина точно растягивалась по всей странице */
+    width: 100%;
+    box-sizing: border-box;
+    /* (опционально) если список внутри уже был в каком-то контейнере с отступами/центровкой,
+       можно добавить margin: 0 auto; — но если хотите «по всему экрану», то достаточно width:100%. */
+    margin: 0 auto;
+}
+
+/* 4) Убираем у li фиксированные нижние отступы,
+      теперь управляем интервалом через grid-gap */
+.software-list li {
+    background-color: #fff;
+    padding: 0.75rem;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    /* удаляем старый margin-bottom, т.к. gap между ними задаётся через grid */
+    margin-bottom: 0;
+    /* чтобы li занимали всю ширину своей «ячейки» */
+    width: 100%;
+    box-sizing: border-box;
+    cursor: pointer;
+}
+
+/* Если вы хотите дополнительно, чтобы каждый item «растягивался» в высоту
+   по контенту внутри, можно явно прописать: */
+.software-list li {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* при необходимости */
+}
+
+/* ============================= */
+/* === Остальные стили (как было) === */
+/* ============================= */
+.filter-form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.filter-form label {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.9rem;
+}
+
+.filter-form input,
+.filter-form select {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.filter-form button[type="submit"] {
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.filter-form button[type="submit"]:hover {
+    background-color: var(--primary-dark);
+}
+
+.filter-form .reset {
+    display: inline-block;
+    font-size: 0.9rem;
+    text-decoration: none;
+    color: var(--secondary-color);
+    padding: 0.6rem 1rem;
+    border: 2px solid var(--secondary-color);
+    border-radius: 4px;
+    transition: background-color 0.2s, color 0.2s;
+    cursor: pointer;
+}
+
+.filter-form .reset:hover,
+.filter-form .reset:focus {
+    background-color: var(--secondary-color);
+    color: #000;
+}
+
+/* Стили для ссылок «Установить» */
+.download {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    margin-left: 0.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--header-footer-text);
+    background-color: var(--primary-color);
+    border: 2px solid var(--primary-color);
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.2s, border-color 0.2s;
+}
+
+.download:hover,
+.download:focus {
+    background-color: var(--primary-dark);
+    border-color: var(--primary-dark);
+    color: #ffffff;
+    outline: none;
+}
+
+/* Состояния ссылок reset и download (важно: !important, чтобы переопределить общие правила) */
+a.reset {
+    background-color: transparent !important;
+    border-color: var(--secondary-color) !important;
+    color: var(--secondary-color) !important;
+}
+
+a.reset:hover,
+a.reset:focus {
+    background-color: var(--secondary-color) !important;
+    color: #000 !important;
+}
+
+a.download {
+    background-color: var(--primary-color) !important;
+    border-color: var(--primary-color) !important;
+    color: var(--header-footer-text) !important;
+}
+
+a.download:hover,
+a.download:focus {
+    background-color: var(--primary-dark) !important;
+    border-color: var(--primary-dark) !important;
+}
+
+/* Белый цвет по умолчанию для всех ссылок (если необходимо) */
+a {
+    color: var(--header-footer-text) !important;
+    text-decoration: none !important;
+}
+
+/* Исключения: у reset и кнопок отзывов цвет — secondary */
+a.reset,
+a.btn-reviews {
+    color: var(--secondary-color) !important;
+}

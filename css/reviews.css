@@ -1,0 +1,30 @@
+.review {
+  border-bottom: 1px solid #ddd;
+  padding: 0.5rem 0;
+}
+.review .rating {
+  color: #ffb300;
+  margin-left: 0.5rem;
+}
+
+
+.review-form {
+  margin-top: 1rem;
+}
+.review-form label {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+.review-form textarea {
+  width: 100%;
+  resize: vertical;
+}
+.review-form button {
+  margin-top: 0.5rem;
+  background-color: var(--primary-color);
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
