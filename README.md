@@ -68,7 +68,7 @@ SoftDir — это простой CRUD-сайт с регистрацией, а�
 
    * Перейдите в браузере по адресу:
 
-     * [http://softdir.local](http://softdir.local)
+     * [http://softdir](http://softdir)
      * или [http://localhost/SoftDir](http://localhost/SoftDir)
 
 ## Структура
