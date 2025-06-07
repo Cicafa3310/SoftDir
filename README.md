@@ -75,16 +75,51 @@ SoftDir — это простой CRUD-сайт с регистрацией, а�
 
 ```
 SoftDir/
-├─ public/       # index.php, assets
-├─ app/
-│  ├ Controllers/
-│  ├ Models/
-│  ├ Views/
-│  └ Core/
-├─ config/
-├─ migrations/
-├─ tests/
-└─ vendor/
+|   config.php
+|   index.php
+|   software_catalog.sql
+|
++---admin
+|       add_category.php
+|       add_software.php
+|       categories_list.php
+|       delete_category.php
+|       delete_user.php
+|       edit_category.php
+|       edit_software.php
+|       edit_user.php
+|       index.php
+|       users_list.php
+|
++---css
+|       admin.css
+|       categories.css
+|       edit_software.css
+|       reviews.css
+|       software_list.css
+|       styles.css
+|
++---fonts
+|       OCRA.ttf
+|
++---includes
+|       auth.php
+|       db_connect.php
+|       footer.php
+|       header.php
+|
++---js
+|       app.js
+|
+\---pages
+        index.php
+        login.php
+        logout.php
+        profile.php
+        register.php
+        reviews.php
+        software_detail.php
+        software_list.php
 ```
 
 ## Использованные технологии
