@@ -124,9 +124,8 @@ SoftDir/
 
 ## Использованные технологии
 
-* PHP 8.2
-* MySQL/MariaDB
-* Composer
+* PHP 5.2.1+
+* MySQL
 * MVC-паттерн
 * Apache/Nginx (OpenServer/XAMPP)
 
