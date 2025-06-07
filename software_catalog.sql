@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1:3306
--- Время создания: Июн 07 2025 г., 20:01
+-- Время создания: Июн 07 2025 г., 20:15
 -- Версия сервера: 5.7.39
 -- Версия PHP: 7.2.34
 
@@ -310,7 +310,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `username`, `password_hash`, `email`, `role`, `created_at`) VALUES
-(1, 'trillar', '$2y$10$/zK8D6hDRAD4C10XFWGHS.caQM46kTlHTg9XtUJ4QHQx7VOhyB8F.', 'roman33242@gmail.com', 'user', '2025-05-24 08:57:10'),
+(1, 'trillar', '$2y$10$/zK8D6hDRAD4C10XFWGHS.caQM46kTlHTg9XtUJ4QHQx7VOhyB8F.', 'r322@gmail.com', 'user', '2025-05-24 08:57:10'),
 (2, 'admin', '$2y$10$BtyKQcS4fiMi6GaUnFnoCOkrLHliTlRBW9qg1NydgPYyvgELbw0h2', 'banan@gmail.com', 'admin', '2025-05-24 09:23:53'),
 (3, 'user3', '$2y$10$xXxXxXxXxXxXxXxXxXxX', 'user3@example.com', 'user', '2025-05-24 18:25:37'),
 (4, 'user4', '$2y$10$yYyYyYyYyYyYyYyYyYyY', 'user4@example.com', 'user', '2025-05-24 18:25:37'),
